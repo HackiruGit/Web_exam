@@ -15,12 +15,11 @@
         <input type="submit" value="Зарегистрировать">
     </form>
     <?php
-    // Обработка формы регистрации
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $password = $_POST['password'];
         
-        // Пример простейшей обработки и вставки в базу данных (не безопасный подход, но для примера)
         $conn = new mysqli('localhost', 'root', 'password', 'webapp');
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
